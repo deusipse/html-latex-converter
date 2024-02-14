@@ -91,15 +91,16 @@ patterns_to_replace = {
     r'Listen.': r'\\listening',
     r'Watch and Listen.': r'\\watchandlisten',
     r'Pencils up.': r'\\pencilsup',
-    r'\d+\.': r'\\nextstep',
     r'\\nextline\n\n\|': r'\\nextrepline',
     r'\\nextstep \|': r'\\nextrepstep',
     r'\s+(?=(\n|$))': r'',
-    r' {2,}': r'',
-    r'\\nextline\n\\nextstep': r'\\nextstep',
+    # r' {2,}': r'',
     r'\\nextline}': r'\\nextline',
-    r'\\nextline\n': r'\n\\nextline\n',
-    r'\\nextrepline}': r'\\nextrepline'
+    # r'\\nextline\n': r'\n\\nextline\n',
+    r'\\nextrepline}': r'\\nextrepline',
+    r'\\tsitalics{\nWatch\n}\n\\ts{.}': r'\\watching',
+    r'\d+\.\n(?!})': r'\\nextstep',
+    r'\\nextline\n\\nextstep': r'\\nextstep',
 }
 
 for pattern, replacement in patterns_to_replace.items():
